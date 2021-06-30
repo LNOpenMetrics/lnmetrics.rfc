@@ -7,6 +7,7 @@ This is a confused and bad format draft of the lightning network metrics specifi
 - Introduction
 - Metrics
 - Terminology
+- Implementation
 - License
 
 ## Introduction
@@ -15,11 +16,21 @@ This is not ready yet because no body will be ready it. Usally it is used to hav
 
 ## Metrics
 
-ALERT: The metrics are not designed to be all respected, but are designed to describe a standard
-and all the node that want use it need respect it.
+The following metrics are designed to be a reference for the final user or tools programmers that need to make an analysis of the network to establish the quality of one node.
 
-The dream that to have some metrics standard is that the user can be free to configure a channel manager like [cliboss](https://github.com/ZmnSCPxj/clboss) to 
-talk with the safe node.
+E.g: Tools like [cliboss](https://github.com/ZmnSCPxj/clboss) for c-lightning can work wery well is it has additional details about the reliability of one node.
 
 - [Metrics 1](metrics/metric_01.md)
 - ...
+
+## Terminology
+
+Nothing here for the moment.
+
+## Implementation
+
+- [go-metrics-reported](#TODO): Reference implementation for C-lightning written in Go lang.
+
+## License
+
+TODO
