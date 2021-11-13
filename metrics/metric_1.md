@@ -54,7 +54,7 @@ In this last case, it is possible detect the failure reason when the node will b
 - event: A string that contains an Event name, like on_update, on_close and on_init, this state are important to catch when the node
 is down for a user reason or a software failure;
 - channels: An Object that contains a summary information on the last activity, and the structure was described in [Channels Summary Payload](#TODO) section;
-- forwords: An Object that contains a summary information on the last activity with the forwards payments, adn the structure was described in [Payments Summary Payload](#TODO) section;
+- forwards: An Object that contains a summary information on the last activity with the forwards payments, and the structure was described in [Payments Summary Payload](#TODO) section;
 - timestamp: A integer that contains the UNIX timestamp when the screenshot was taken.
 
 ### Channels Summary Payload
