@@ -1,0 +1,36 @@
+matrix:
+- name: Markdown Speck
+  aspell:
+    lang: en
+    d: en_US
+  dictionary:
+    wordlists:
+    - .spellcheck/dictionary.txt
+  sources:
+  - ./**/*.md
+  pipeline:
+  - pyspelling.filters.text:
+  - pyspelling.filters.url:
+  - pyspelling.filters.html:
+      comments: false
+      attributes:
+      - title
+      - alt
+      ignores:
+      - code
+      - pre
+  - pyspelling.filters.context:
+      context_visible_first: true
+      escapes: \\[\\`~]
+      delimiters:
+      # Ignore multiline content between fences (fences can have 3 or more back ticks)
+      # ```
+      # content
+      # ```
+      - open: '(?s)^(?P<open> *`{3,})$'
+        close: '^(?P=open)$'
+      # Ignore text between inline back ticks
+      - open: '(?P<open>`+)'
+        close: '(?P=open)'
+
+      
