@@ -1,0 +1,278 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Metric 1",
+    "required": [
+        "version",
+        "metric_name",
+        "node_id",
+        "node_alias",
+        "color",
+        "network",
+        "os_info",
+        "node_info",
+        "timezone",
+        "up_time",
+        "channels_info"
+    ],
+    "type": "object",
+    "properties": {
+        "version": {
+            "description": "Version of the metrics, it is required to some migration techinque",
+            "type": "integer",
+            "minimum": 0
+        },
+        "metric_name": {
+            "description": "Name of the metrics",
+            "type": "string"
+        },
+        "node_id": {
+            "description": "Node ID of the node that is pushing the metrics",
+            "type": "string"
+        },
+        "color": {
+            "description": "Color of the node that is pushing the metrics",
+            "type": "string"
+        },
+        "node_alias": {
+            "description": "The alias of the node that is pushing the metrics",
+            "type": "string"
+        },
+        "network": {
+            "description": "The network where the metrics are coming from",
+            "type": "string"
+        },
+        "os_info": {
+            "type": "object",
+            "properties": {
+                "os": {
+                    "description": "The Base Operative System where the node it is running",
+                    "type": "string"
+                },
+                "version": {
+                    "description": "The specific version of the System",
+                    "type": "string"
+                },
+                "architecture": {
+                    "description": "The operative system architecture",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "os",
+                "version",
+                "architecture"
+            ]
+        },
+        "node_info": {
+            "type": "object",
+            "properties": {
+                "implementation": {
+                    "description": "The lightning network implementation",
+                    "type": "string"
+                },
+                "version": {
+                    "description": "The version of the reference implementation",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "implementation",
+                "version"
+            ]
+        },
+        "timezone": {
+            "description": "The time zone of the server",
+            "type": "string"
+        },
+        "up_time": {
+            "type": "array",
+            "description": "A complete screenshot of the metric one data when a event happpens",
+            "items": {
+                "type": "object",
+                "requirements": [
+                    "event",
+                    "forwards",
+                    "channels",
+                    "timestamp"
+                ],
+                "properties": {
+                    "event": {
+                        "type": "string",
+                        "description": "The event that caused this update, can be on_start, on_close, on_update"
+                    },
+                    "forwards": {
+                        "type": "object",
+                        "description": "A complete summary of the payment that happening in the complete history of the node",
+                        "requirements": [
+                            "completed",
+                            "failed"
+                        ],
+                        "properties": {
+                            "completed": {
+                                "type": "integer",
+                                "description": "How many payment have been completed successfully"
+                            },
+                            "failed": {
+                                "type": "integer",
+                                "description": "How many payment have been failed by the node"
+                            }
+                        }
+                    },
+                    "channels": {
+                        "type": "object",
+                        "description": "A complete summary of the channels status with some useful information",
+                        "requirements": [
+                            "tot_channels",
+                            "summary"
+                        ],
+                        "properties": {
+                            "tot_channels": {
+                                "type": "integer",
+                                "description": "The sum of the total channels opened for the node"
+                            },
+                            "summary": {
+                                "type": "object",
+                                "description": [
+                                    "node_id",
+                                    "alias",
+                                    "color",
+                                    "channel_id",
+                                    "state"
+                                ],
+                                "properties": {
+                                    "node_id": {
+                                        "type": "string",
+                                        "description": "Node id of the node that is to other side of the channel"
+                                    },
+                                    "alias": {
+                                        "type": "string",
+                                        "description": "The alias of the node where the channel is opened"
+                                    },
+                                    "color": {
+                                        "type": "string",
+                                        "description": "The color of the node where the channel is opened"
+                                    },
+                                    "channel_id": {
+                                        "type": "string",
+                                        "description": "The unique id of the channel"
+                                    },
+                                    "state": {
+                                        "type": "string",
+                                        "description": "The actual state of the channel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "timestamp": {
+                        "type": "integer",
+                        "description": "The timestamp where the screenshot was taken, if the value is 0 the node is offline"
+                    }
+                }
+            }
+        },
+        "channels_info": {
+            "type": "array",
+            "description": "The snapshot of the channels that are actually opened",
+            "items": {
+                "type": "object",
+                "requirements": [
+                    "channel_id",
+                    "node_id",
+                    "node_alias",
+                    "color",
+                    "capacity",
+                    "forwards",
+                    "up_time",
+                    "online",
+                    "last_update",
+                    "direction"
+                ],
+                "properties": {
+                    "channel_id": {
+                        "type": "string",
+                        "description": "The unique identifier of the channel on the network"
+                    },
+                    "node_id": {
+                        "type": "string",
+                        "description": "The public key of the node aka node id"
+                    },
+                    "node_alias": {
+                        "type": "string",
+                        "description": "The alias of the node"
+                    },
+                    "color": {
+                        "type": "string",
+                        "description": "The color of the node"
+                    },
+                    "capacity": {
+                        "type": "integer",
+                        "description": "The actual capacity of the channel in satoshi"
+                    },
+                    "forwards": {
+                        "type": "array",
+                        "description": "List of forward payment made by the node, with the actual status",
+                        "items": {
+                            "type": "object",
+                            "requirements": [
+                                "direction",
+                                "status"
+                            ],
+                            "properties": {
+                                "direction": {
+                                    "type": "string",
+                                    "description": "Direction of the payment, in or out"
+                                },
+                                "status": {
+                                    "type": "string",
+                                    "description": "Actual status (final or not) of the payment"
+                                },
+                                "failure_reason": {
+                                    "type": "string",
+                                    "description": "The failure reason if available"
+                                },
+                                "failure_code": {
+                                    "type": "integer",
+                                    "description": "The status code that cause the failure"
+                                }
+                            }
+                        }
+                    },
+                    "up_time": {
+                        "type": "array",
+                        "description": "The up time of the node witch the channels it is made",
+                        "items": {
+                            "type": "object",
+                            "description": [
+                                "timestamp",
+                                "status"
+                            ],
+                            "properties": {
+                                "timestamp": {
+                                    "type": "integer",
+                                    "description": "The time instance in UNIX time when the check is made"
+                                },
+                                "status": {
+                                    "type": "string",
+                                    "description": "The status of the node from a the own metric node point of view"
+                                }
+                            }
+                        }
+                    },
+                    "online": {
+                        "type": "bool",
+                        "description": "Describe the status of the channel, if it is online or not"
+                    },
+                    "last_update": {
+                        "type": "integer",
+                        "description": "The last message received from the gossip"
+                    },
+                    "direction": {
+                        "type": "string",
+                        "description": "The direction of the channel, IN or OUT"
+                    }
+                }
+            }
+        }
+    }
+}
