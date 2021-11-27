@@ -1,0 +1,213 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Metric 1 Output",
+    "required": [
+        "version",
+        "age",
+        "payment_rating",
+        "up_time",
+        "channel_info"
+    ],
+    "type": "object",
+    "properties": {
+        "version": {
+            "description": "Version of the metrics output",
+            "type": "integer",
+            "minimum": 1
+        },
+        "age": {
+            "description": "First time that the node it is see on services",
+            "type": "integer",
+        },
+        "payment_rating": {
+            "type": "object",
+            "properties": {
+                "1d": {
+                    "type": "object",
+                    "properties": {
+                        "success": {
+                            "description": "Success rating in percentage in the last day",
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "failure": {
+                            "description": "Failure rating in percentage in the last day",
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "internal_failure": {
+                            "description": "Internal failure in percentage in the last day",
+                            "type": "integer",
+                            "minimum": 0
+                        }
+                    }
+                },
+                "10d": {
+                    "type": "object",
+                    "properties": {
+                        "success": {
+                            "description": "Success rating in percentage in the last 10 days",
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "failure": {
+                            "description": "Failure rating in percentage in the last 10 days",
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "internal_failure": {
+                            "description": "Internal failure in percentage in the last 10 days",
+                            "type": "integer",
+                            "minimum": 0
+                        }
+                    }
+                },
+                "30d": {
+                    "type": "object",
+                    "properties": {
+                        "success": {
+                            "description": "Success rating in percentage in the last 30 days",
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "failure": {
+                            "description": "Failure rating in percentage in the last 30 days",
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "internal_failure": {
+                            "description": "Internal failure in percentage in the last 30 days",
+                            "type": "integer",
+                            "minimum": 0
+                        }
+                    }
+                },
+                "6m": {
+                    "type": "object",
+                    "properties": {
+                        "success": {
+                            "description": "Success rating in percentage in the last 6 month",
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "failure": {
+                            "description": "Failure rating in percentage in the 6 month",
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "internal_failure": {
+                            "description": "Internal failure in percentage in the last 6 month",
+                            "type": "integer",
+                            "minimum": 0
+                        }
+                    }
+                },
+                "full": {
+                    "type": "object",
+                    "properties": {
+                        "success": {
+                            "description": "Success rating in percentage in the known period",
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "failure": {
+                            "description": "Failure rating in percentage in the known period",
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "internal_failure": {
+                            "description": "Internal failure in percentage in the known period",
+                            "type": "integer",
+                            "minimum": 0
+                        }
+                    }
+                }
+            },
+            "up_time": {
+                "type": "object",
+                "properties": {
+                    "1d": {
+                        "description": "Node Up time in the last day",
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "10d": {
+                        "description": "Node Up time in the last 10 days",
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "30d": {
+                        "description": "Node Up time in the last 30 days",
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "6m": {
+                        "description": "Node Up time in the last 6 month",
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "full": {
+                        "description": "Node Up time in the know period",
+                        "type": "integer",
+                        "minimum": 0
+                    }
+                }
+            },
+            "channels_info": {
+                "type": "array",
+                "description": "The list of channels where the node is connected with and has a channel",
+                "items": {
+                    "type": "object",
+                    "requirements": [
+                        "channel_id",
+                        "node_id",
+                    ],
+                    "properties": {
+                        "channel_id": {
+                            "type": "string",
+                            "description": "The unique channel identifier"
+                        },
+                        "node_id": {
+                            "type": "string",
+                            "description": "The public key of the node"
+                        },
+                        "capacity": {
+                            "type": "integer",
+                            "description": "Actual capacity of the channels expressed in milli satoshi"
+                        },
+                        "fee": {
+                            "type": "object",
+                            "description": "Fee information related to the node",
+                            "properties": {
+                                "base": {
+                                    "type": "integer",
+                                    "description": "Base fee of the node",
+                                    "minimum": 0
+                                },
+                                "per_msat": {
+                                    "type": "integer",
+                                    "description": "Per Millisatoshi fee of the node",
+                                    "minimum": 0
+                                }
+                            }
+                        },
+                        "limit": {
+                            "type": "object",
+                            "description": "HTLC min and max limit of the node",
+                            "properties": {
+                                "min": {
+                                    "type": "integer",
+                                    "description": "The smallest payment source will allow via this channel express in msat"
+                                },
+                                "max": {
+                                    "type": "integer",
+                                    "description": "The largest payment source will allow via this channel express in msat"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
