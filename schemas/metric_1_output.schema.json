@@ -17,7 +17,7 @@
         },
         "age": {
             "description": "First time that the node it is see on services",
-            "type": "integer",
+            "type": "integer"
         },
         "payment_rating": {
             "type": "object",
@@ -160,7 +160,7 @@
                     "type": "object",
                     "requirements": [
                         "channel_id",
-                        "node_id",
+                        "node_id"
                     ],
                     "properties": {
                         "channel_id": {

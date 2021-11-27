@@ -270,6 +270,38 @@
                     "direction": {
                         "type": "string",
                         "description": "The direction of the channel, IN or OUT"
+                    },
+                    "fee": {
+                        "type": "object",
+                        "description": "Information about the node fee",
+                        "properties": {
+                            "base": {
+                                "type": "integer",
+                                "description": "Base fee changed by source to use this channel expressed in msat",
+                                "minimum": 0
+                            },
+                            "per_msat": {
+                                "type": "integer",
+                                "description": "Proportional fee changed by source to use this channel, in parts-per-million",
+                                "minimum": 0
+                            }
+                        }
+                    },
+                    "limit": {
+                        "type": "object",
+                        "description": "Information about the HTLC limit for the node",
+                        "properties": {
+                            "min": {
+                                "type": "integer",
+                                "description": "The largest payment source will allow via this channel expressed in msat",
+                                "minimum": 0
+                            },
+                            "max": {
+                                "type": "integer",
+                                "description": "The largest payment source will allow via this channel expressed in msat",
+                                "minimum": 0
+                            }
+                        }
                     }
                 }
             }
