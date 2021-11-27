@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Metric 1",
+    "title": "Metric 1 Input",
     "required": [
         "version",
         "metric_name",
@@ -17,7 +17,7 @@
     "type": "object",
     "properties": {
         "version": {
-            "description": "Version of the metrics, it is required to some migration techinque",
+            "description": "Version of the metrics, it is required to some migration technique",
             "type": "integer",
             "minimum": 0
         },
@@ -86,7 +86,7 @@
         },
         "up_time": {
             "type": "array",
-            "description": "A complete screenshot of the metric one data when a event happpens",
+            "description": "A complete screenshot of the metric one data when a event happen",
             "items": {
                 "type": "object",
                 "requirements": [
@@ -166,7 +166,7 @@
                     },
                     "timestamp": {
                         "type": "integer",
-                        "description": "The timestamp where the screenshot was taken, if the value is 0 the node is offline"
+                        "description": "The timestamp where the screenshot was taken, 0 when there is some errors"
                     }
                 }
             }
@@ -270,6 +270,38 @@
                     "direction": {
                         "type": "string",
                         "description": "The direction of the channel, IN or OUT"
+                    },
+                    "fee": {
+                        "type": "object",
+                        "description": "Information about the node fee",
+                        "properties": {
+                            "base": {
+                                "type": "integer",
+                                "description": "Base fee changed by source to use this channel expressed in msat",
+                                "minimum": 0
+                            },
+                            "per_msat": {
+                                "type": "integer",
+                                "description": "Proportional fee changed by source to use this channel, in parts-per-million",
+                                "minimum": 0
+                            }
+                        }
+                    },
+                    "limit": {
+                        "type": "object",
+                        "description": "Information about the HTLC limit for the node",
+                        "properties": {
+                            "min": {
+                                "type": "integer",
+                                "description": "The largest payment source will allow via this channel expressed in msat",
+                                "minimum": 0
+                            },
+                            "max": {
+                                "type": "integer",
+                                "description": "The largest payment source will allow via this channel expressed in msat",
+                                "minimum": 0
+                            }
+                        }
                     }
                 }
             }
