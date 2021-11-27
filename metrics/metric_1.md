@@ -6,74 +6,34 @@
   Author: Vincenzo Palazzo <vicenzo.palazzo@protonmail.com>
   Status: draft
   Created: xxxx-xx-xx
-  Version: 2
+  Version: 3
 </pre>
 
 ## Introduction
 
-No body will read it
+TODO.
 
-## Data collected and reported
+## Metric Input
 
-### Metrics Payload
+The input of the metric is described in the following document [metric_one.input.mg](metric_1_input.schema.md)
 
-- version: Integer that contains the version of the metrics\_one;
-- name: String that contains the name of metric, in this case is *metric_one*;
-- node_id: String that contains the node id that are reporting the metric;
-- color: String that contains the node color;
-- node_alias: String that contains the Alias of the node;
-- timezone: String that contains the timezone of the node;
-- os_info: Object that contains information about the host os, structure describe in [Os Info Payload](#TODO) section;
-- node_info: Object that contains information about the ln implementation, structure describe in [Node Info Payload](#TODO) section; 
-- up_time: Array of object that contains the information about the status of the node with a cadence of 30 minutes, if the 
-difference between the last two element is more that 40 minutes this means that the node is down for some reason. The structure
-of each object inside the array is described in [Status Node Payload](#TODO) section;
+## Metric Output
 
-### Os Info Payload
+The output of this metric it is described in the following document [metric_one.output.md](metric_1_output.schema.md)
 
-Contains information about the os, and the payload contains the following information:
+## Services Supported
 
-- *os*: String that contains the name of the os;
-- *version*: String that contains the version of the system;
-- *architecture*: String that contains the architecture of the system.
+Here there is a list of server that support the metric_one:
 
-### Node Info Payload
+- [lnmetrics.server](https://github.com/LNOpenMetrics/lnmetrics.server)
 
-Contains information about the node implementation, and the payload contains the following information:
+Here there is a list of all the client that collect the metric_one:
 
-- *implementation*: The name of the implementation;
-- *version*: The version of the implementation.
+    - [go-lnmetrics.reporter](https://github.com/LNOpenMetrics/go-lnmetrics.reporter)
 
-### Status Node Payload
+## Change-log
 
-Contains all the information of the instant where the screenshot it is taken, normally a screenshot of the status node
-it is taken each 30 minutes, and if the difference between the last two it is more than 40 minutes the node it is considered down.
-
-In this last case, it is possible detect the failure reason when the node will back online with an evaluation of the *event* value.
-
-- event: A string that contains an Event name, like on_update, on_close and on_init, this state are important to catch when the node
-is down for a user reason or a software failure;
-- channels: An Object that contains a summary information on the last activity, and the structure was described in [Channels Summary Payload](#TODO) section;
-- forwards: An Object that contains a summary information on the last activity with the forwards payments, and the structure was described in [Payments Summary Payload](#TODO) section;
-- timestamp: A integer that contains the UNIX timestamp when the screenshot was taken.
-
-### Channels Summary Payload
-
-TODO: Fill this information
-
-### Payments Summary Payload
-
-TODO: Fill this information
-
-### JSON Schema
-
-TODO add JSON schema here
-
-## Reported Supported
-
-Here there is a list of reported server that support the metric_one:
-
-- [lnmetrics.server](#TODO)
+- Version 3: Described from the following PR https://github.com/LNOpenMetrics/lnmetrics.rfc/pull/11
 
 ## License
 

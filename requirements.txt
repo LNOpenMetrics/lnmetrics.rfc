@@ -1,1 +1,2 @@
 pyspelling==2.7.3
+json-schema-for-humans

@@ -17,7 +17,7 @@
     "type": "object",
     "properties": {
         "version": {
-            "description": "Version of the metrics, it is required to some migration techinque",
+            "description": "Version of the metrics, it is required to some migration technique",
             "type": "integer",
             "minimum": 0
         },
@@ -86,7 +86,7 @@
         },
         "up_time": {
             "type": "array",
-            "description": "A complete screenshot of the metric one data when a event happpens",
+            "description": "A complete screenshot of the metric one data when a event happen",
             "items": {
                 "type": "object",
                 "requirements": [
@@ -166,7 +166,7 @@
                     },
                     "timestamp": {
                         "type": "integer",
-                        "description": "The timestamp where the screenshot was taken, if the value is 0 the node is offline"
+                        "description": "The timestamp where the screenshot was taken, 0 when there is some errors"
                     }
                 }
             }
