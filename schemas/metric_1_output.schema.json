@@ -22,7 +22,7 @@
         "payment_rating": {
             "type": "object",
             "properties": {
-                "1d": {
+                "one_day": {
                     "type": "object",
                     "properties": {
                         "success": {
@@ -42,7 +42,7 @@
                         }
                     }
                 },
-                "10d": {
+                "ten_days": {
                     "type": "object",
                     "properties": {
                         "success": {
@@ -62,7 +62,7 @@
                         }
                     }
                 },
-                "30d": {
+                "thirty_days": {
                     "type": "object",
                     "properties": {
                         "success": {
@@ -82,7 +82,7 @@
                         }
                     }
                 },
-                "6m": {
+                "six_months": {
                     "type": "object",
                     "properties": {
                         "success": {
@@ -126,22 +126,22 @@
             "up_time": {
                 "type": "object",
                 "properties": {
-                    "1d": {
+                    "one_day": {
                         "description": "Node Up time in the last day",
                         "type": "integer",
                         "minimum": 0
                     },
-                    "10d": {
+                    "ten_days": {
                         "description": "Node Up time in the last 10 days",
                         "type": "integer",
                         "minimum": 0
                     },
-                    "30d": {
+                    "thirty_days": {
                         "description": "Node Up time in the last 30 days",
                         "type": "integer",
                         "minimum": 0
                     },
-                    "6m": {
+                    "six_months": {
                         "description": "Node Up time in the last 6 month",
                         "type": "integer",
                         "minimum": 0
@@ -191,7 +191,7 @@
                                 }
                             }
                         },
-                        "limit": {
+                        "limits": {
                             "type": "object",
                             "description": "HTLC min and max limit of the node",
                             "properties": {
