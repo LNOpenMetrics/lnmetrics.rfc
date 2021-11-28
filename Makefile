@@ -6,3 +6,6 @@ check:
 
 doc-all:
 	generate-schema-doc --config-file conf_docgen.yml schemas metrics
+
+clean:
+	rm -rf *.dic schemas/*schemas*
