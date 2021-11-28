@@ -19,7 +19,7 @@
             "description": "First time that the node it is see on services",
             "type": "integer"
         },
-        "payment_rating": {
+        "forwards_rating": {
             "type": "object",
             "properties": {
                 "one_day": {
@@ -205,33 +205,138 @@
                                 }
                             }
                         },
-                        "up_time": {
+                        "forwards_rating": {
                             "type": "object",
                             "properties": {
                                 "one_day": {
-                                    "description": "Node Up time in the last day",
-                                    "type": "integer",
-                                    "minimum": 0
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Success rating in percentage in the last day",
+                                            "type": "integer",
+                                            "minimum": 0
+                                        },
+                                        "failure": {
+                                            "description": "Failure rating in percentage in the last day",
+                                            "type": "integer",
+                                            "minimum": 0
+                                        },
+                                        "internal_failure": {
+                                            "description": "Internal failure in percentage in the last day",
+                                            "type": "integer",
+                                            "minimum": 0
+                                        }
+                                    }
                                 },
                                 "ten_days": {
-                                    "description": "Node Up time in the last 10 days",
-                                    "type": "integer",
-                                    "minimum": 0
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Success rating in percentage in the last 10 days",
+                                            "type": "integer",
+                                            "minimum": 0
+                                        },
+                                        "failure": {
+                                            "description": "Failure rating in percentage in the last 10 days",
+                                            "type": "integer",
+                                            "minimum": 0
+                                        },
+                                        "internal_failure": {
+                                            "description": "Internal failure in percentage in the last 10 days",
+                                            "type": "integer",
+                                            "minimum": 0
+                                        }
+                                    }
                                 },
                                 "thirty_days": {
-                                    "description": "Node Up time in the last 30 days",
-                                    "type": "integer",
-                                    "minimum": 0
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Success rating in percentage in the last 30 days",
+                                            "type": "integer",
+                                            "minimum": 0
+                                        },
+                                        "failure": {
+                                            "description": "Failure rating in percentage in the last 30 days",
+                                            "type": "integer",
+                                            "minimum": 0
+                                        },
+                                        "internal_failure": {
+                                            "description": "Internal failure in percentage in the last 30 days",
+                                            "type": "integer",
+                                            "minimum": 0
+                                        }
+                                    }
                                 },
                                 "six_months": {
-                                    "description": "Node Up time in the last 6 month",
-                                    "type": "integer",
-                                    "minimum": 0
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Success rating in percentage in the last 6 month",
+                                            "type": "integer",
+                                            "minimum": 0
+                                        },
+                                        "failure": {
+                                            "description": "Failure rating in percentage in the 6 month",
+                                            "type": "integer",
+                                            "minimum": 0
+                                        },
+                                        "internal_failure": {
+                                            "description": "Internal failure in percentage in the last 6 month",
+                                            "type": "integer",
+                                            "minimum": 0
+                                        }
+                                    }
                                 },
                                 "full": {
-                                    "description": "Node Up time in the know period",
-                                    "type": "integer",
-                                    "minimum": 0
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Success rating in percentage in the known period",
+                                            "type": "integer",
+                                            "minimum": 0
+                                        },
+                                        "failure": {
+                                            "description": "Failure rating in percentage in the known period",
+                                            "type": "integer",
+                                            "minimum": 0
+                                        },
+                                        "internal_failure": {
+                                            "description": "Internal failure in percentage in the known period",
+                                            "type": "integer",
+                                            "minimum": 0
+                                        }
+                                    }
+                                }
+                            },
+                            "up_time": {
+                                "type": "object",
+                                "properties": {
+                                    "one_day": {
+                                        "description": "Node Up time in the last day",
+                                        "type": "integer",
+                                        "minimum": 0
+                                    },
+                                    "ten_days": {
+                                        "description": "Node Up time in the last 10 days",
+                                        "type": "integer",
+                                        "minimum": 0
+                                    },
+                                    "thirty_days": {
+                                        "description": "Node Up time in the last 30 days",
+                                        "type": "integer",
+                                        "minimum": 0
+                                    },
+                                    "six_months": {
+                                        "description": "Node Up time in the last 6 month",
+                                        "type": "integer",
+                                        "minimum": 0
+                                    },
+                                    "full": {
+                                        "description": "Node Up time in the know period",
+                                        "type": "integer",
+                                        "minimum": 0
+                                    }
                                 }
                             }
                         }
