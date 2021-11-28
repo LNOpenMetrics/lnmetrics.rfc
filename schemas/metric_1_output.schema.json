@@ -204,6 +204,36 @@
                                     "description": "The largest payment source will allow via this channel express in msat"
                                 }
                             }
+                        },
+                        "up_time": {
+                            "type": "object",
+                            "properties": {
+                                "one_day": {
+                                    "description": "Node Up time in the last day",
+                                    "type": "integer",
+                                    "minimum": 0
+                                },
+                                "ten_days": {
+                                    "description": "Node Up time in the last 10 days",
+                                    "type": "integer",
+                                    "minimum": 0
+                                },
+                                "thirty_days": {
+                                    "description": "Node Up time in the last 30 days",
+                                    "type": "integer",
+                                    "minimum": 0
+                                },
+                                "six_months": {
+                                    "description": "Node Up time in the last 6 month",
+                                    "type": "integer",
+                                    "minimum": 0
+                                },
+                                "full": {
+                                    "description": "Node Up time in the know period",
+                                    "type": "integer",
+                                    "minimum": 0
+                                }
+                            }
                         }
                     }
                 }
