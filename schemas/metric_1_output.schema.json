@@ -163,6 +163,10 @@
                         "node_id"
                     ],
                     "properties": {
+                        "age": {
+                            "type": "integer",
+                            "description": "Unix timestamp of the first time that the channels is known by the server"
+                        },
                         "channel_id": {
                             "type": "string",
                             "description": "The unique channel identifier"
