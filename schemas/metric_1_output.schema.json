@@ -4,6 +4,7 @@
     "required": [
         "version",
         "age",
+        "last_update",
         "payment_rating",
         "up_time",
         "channel_info"
@@ -18,6 +19,10 @@
         "age": {
             "description": "First time that the node it is see on services",
             "type": "integer"
+        },
+        "last_update": {
+            "type": "integer",
+            "description": "The last time expressed in unix time that the rating was updated"
         },
         "forwards_rating": {
             "type": "object",
