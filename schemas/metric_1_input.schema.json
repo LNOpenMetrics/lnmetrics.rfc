@@ -248,7 +248,8 @@
                             "type": "object",
                             "requirements": [
                                 "direction",
-                                "status"
+                                "status",
+                                "timestamp"
                             ],
                             "properties": {
                                 "direction": {
@@ -266,6 +267,10 @@
                                 "failure_code": {
                                     "type": "integer",
                                     "description": "The status code that cause the failure"
+                                },
+                                "timestamp": {
+                                    "type": "integer",
+                                    "description": "The time in UNIX form when the payment was received"
                                 }
                             }
                         }
