@@ -7,7 +7,7 @@
         "last_update",
         "payment_rating",
         "up_time",
-        "channel_info"
+        "channels_info"
     ],
     "type": "object",
     "properties": {
@@ -165,7 +165,11 @@
                     "type": "object",
                     "requirements": [
                         "channel_id",
-                        "node_id"
+                        "node_id",
+                        "age",
+                        "capacity",
+                        "fee",
+                        "limits"
                     ],
                     "properties": {
                         "age": {
