@@ -280,11 +280,16 @@
                         "description": "The up time of the node witch the channels it is made",
                         "items": {
                             "type": "object",
-                            "description": [
+                            "required": [
                                 "timestamp",
-                                "status"
+                                "status",
+                                "event"
                             ],
                             "properties": {
+                                "event": {
+                                    "type": "string",
+                                    "description": "The event that cause the update on the channel"
+                                },
                                 "timestamp": {
                                     "type": "integer",
                                     "description": "The time instance in UNIX time when the check is made"
