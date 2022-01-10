@@ -184,6 +184,14 @@
                             "type": "string",
                             "description": "The public key of the node"
                         },
+                        "alias": {
+                            "type": "string",
+                            "description": "The alias of the node"
+                        },
+                        "direction": {
+                            "type": "string",
+                            "description": "The direction of the channel"
+                        },
                         "capacity": {
                             "type": "integer",
                             "description": "Actual capacity of the channels expressed in milli satoshi"
