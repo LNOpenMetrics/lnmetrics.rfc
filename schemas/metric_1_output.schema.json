@@ -40,8 +40,8 @@
                             "type": "integer",
                             "minimum": 0
                         },
-                        "internal_failure": {
-                            "description": "Internal failure in percentage in the last day",
+                        "local_failure": {
+                            "description": "local failure in percentage in the last day",
                             "type": "integer",
                             "minimum": 0
                         }
@@ -60,8 +60,8 @@
                             "type": "integer",
                             "minimum": 0
                         },
-                        "internal_failure": {
-                            "description": "Internal failure in percentage in the last 10 days",
+                        "local_failure": {
+                            "description": "local failure in percentage in the last 10 days",
                             "type": "integer",
                             "minimum": 0
                         }
@@ -80,8 +80,8 @@
                             "type": "integer",
                             "minimum": 0
                         },
-                        "internal_failure": {
-                            "description": "Internal failure in percentage in the last 30 days",
+                        "local_failure": {
+                            "description": "Local failure in percentage in the last 30 days",
                             "type": "integer",
                             "minimum": 0
                         }
@@ -100,8 +100,8 @@
                             "type": "integer",
                             "minimum": 0
                         },
-                        "internal_failure": {
-                            "description": "Internal failure in percentage in the last 6 month",
+                        "local_failure": {
+                            "description": "Local failure in percentage in the last 6 month",
                             "type": "integer",
                             "minimum": 0
                         }
@@ -120,8 +120,8 @@
                             "type": "integer",
                             "minimum": 0
                         },
-                        "internal_failure": {
-                            "description": "Internal failure in percentage in the known period",
+                        "local_failure": {
+                            "description": "Local failure in percentage in the known period",
                             "type": "integer",
                             "minimum": 0
                         }
@@ -242,8 +242,8 @@
                                             "type": "integer",
                                             "minimum": 0
                                         },
-                                        "internal_failure": {
-                                            "description": "Internal failure in percentage in the last day",
+                                        "local_failure": {
+                                            "description": "local failure in percentage in the last day",
                                             "type": "integer",
                                             "minimum": 0
                                         }
@@ -262,8 +262,8 @@
                                             "type": "integer",
                                             "minimum": 0
                                         },
-                                        "internal_failure": {
-                                            "description": "Internal failure in percentage in the last 10 days",
+                                        "local_failure": {
+                                            "description": "Local failure in percentage in the last 10 days",
                                             "type": "integer",
                                             "minimum": 0
                                         }
@@ -282,8 +282,8 @@
                                             "type": "integer",
                                             "minimum": 0
                                         },
-                                        "internal_failure": {
-                                            "description": "Internal failure in percentage in the last 30 days",
+                                        "local_failure": {
+                                            "description": "Local failure in percentage in the last 30 days",
                                             "type": "integer",
                                             "minimum": 0
                                         }
@@ -302,8 +302,8 @@
                                             "type": "integer",
                                             "minimum": 0
                                         },
-                                        "internal_failure": {
-                                            "description": "Internal failure in percentage in the last 6 month",
+                                        "local_failure": {
+                                            "description": "Local failure in percentage in the last 6 month",
                                             "type": "integer",
                                             "minimum": 0
                                         }
@@ -322,8 +322,8 @@
                                             "type": "integer",
                                             "minimum": 0
                                         },
-                                        "internal_failure": {
-                                            "description": "Internal failure in percentage in the known period",
+                                        "local_failure": {
+                                            "description": "Local failure in percentage in the known period",
                                             "type": "integer",
                                             "minimum": 0
                                         }

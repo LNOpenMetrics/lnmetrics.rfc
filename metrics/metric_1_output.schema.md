@@ -66,23 +66,23 @@
   - [5.1. [Optional] Property `Metric 1 Output > forwards_rating > one_day`](#forwards_rating_one_day)
     - [5.1.1. [Optional] Property `Metric 1 Output > forwards_rating > one_day > success`](#forwards_rating_one_day_success)
     - [5.1.2. [Optional] Property `Metric 1 Output > forwards_rating > one_day > failure`](#forwards_rating_one_day_failure)
-    - [5.1.3. [Optional] Property `Metric 1 Output > forwards_rating > one_day > internal_failure`](#forwards_rating_one_day_internal_failure)
+    - [5.1.3. [Optional] Property `Metric 1 Output > forwards_rating > one_day > local_failure`](#forwards_rating_one_day_local_failure)
   - [5.2. [Optional] Property `Metric 1 Output > forwards_rating > ten_days`](#forwards_rating_ten_days)
     - [5.2.1. [Optional] Property `Metric 1 Output > forwards_rating > ten_days > success`](#forwards_rating_ten_days_success)
     - [5.2.2. [Optional] Property `Metric 1 Output > forwards_rating > ten_days > failure`](#forwards_rating_ten_days_failure)
-    - [5.2.3. [Optional] Property `Metric 1 Output > forwards_rating > ten_days > internal_failure`](#forwards_rating_ten_days_internal_failure)
+    - [5.2.3. [Optional] Property `Metric 1 Output > forwards_rating > ten_days > local_failure`](#forwards_rating_ten_days_local_failure)
   - [5.3. [Optional] Property `Metric 1 Output > forwards_rating > thirty_days`](#forwards_rating_thirty_days)
     - [5.3.1. [Optional] Property `Metric 1 Output > forwards_rating > thirty_days > success`](#forwards_rating_thirty_days_success)
     - [5.3.2. [Optional] Property `Metric 1 Output > forwards_rating > thirty_days > failure`](#forwards_rating_thirty_days_failure)
-    - [5.3.3. [Optional] Property `Metric 1 Output > forwards_rating > thirty_days > internal_failure`](#forwards_rating_thirty_days_internal_failure)
+    - [5.3.3. [Optional] Property `Metric 1 Output > forwards_rating > thirty_days > local_failure`](#forwards_rating_thirty_days_local_failure)
   - [5.4. [Optional] Property `Metric 1 Output > forwards_rating > six_months`](#forwards_rating_six_months)
     - [5.4.1. [Optional] Property `Metric 1 Output > forwards_rating > six_months > success`](#forwards_rating_six_months_success)
     - [5.4.2. [Optional] Property `Metric 1 Output > forwards_rating > six_months > failure`](#forwards_rating_six_months_failure)
-    - [5.4.3. [Optional] Property `Metric 1 Output > forwards_rating > six_months > internal_failure`](#forwards_rating_six_months_internal_failure)
+    - [5.4.3. [Optional] Property `Metric 1 Output > forwards_rating > six_months > local_failure`](#forwards_rating_six_months_local_failure)
   - [5.5. [Optional] Property `Metric 1 Output > forwards_rating > full`](#forwards_rating_full)
     - [5.5.1. [Optional] Property `Metric 1 Output > forwards_rating > full > success`](#forwards_rating_full_success)
     - [5.5.2. [Optional] Property `Metric 1 Output > forwards_rating > full > failure`](#forwards_rating_full_failure)
-    - [5.5.3. [Optional] Property `Metric 1 Output > forwards_rating > full > internal_failure`](#forwards_rating_full_internal_failure)
+    - [5.5.3. [Optional] Property `Metric 1 Output > forwards_rating > full > local_failure`](#forwards_rating_full_local_failure)
 
 **Title:** Metric 1 Output
 
@@ -159,12 +159,12 @@
 | **Additional properties** | [[Any type: allowed]](# "Additional Properties of any type are allowed.") |
 |                           |                                                                           |
 
-| Property                                                         | Pattern | Type    | Deprecated | Definition | Title/Description                              |
-| ---------------------------------------------------------------- | ------- | ------- | ---------- | ---------- | ---------------------------------------------- |
-| - [success](#forwards_rating_one_day_success )                   | No      | integer | No         | -          | Success rating in percentage in the last day   |
-| - [failure](#forwards_rating_one_day_failure )                   | No      | integer | No         | -          | Failure rating in percentage in the last day   |
-| - [internal_failure](#forwards_rating_one_day_internal_failure ) | No      | integer | No         | -          | Internal failure in percentage in the last day |
-|                                                                  |         |         |            |            |                                                |
+| Property                                                   | Pattern | Type    | Deprecated | Definition | Title/Description                            |
+| ---------------------------------------------------------- | ------- | ------- | ---------- | ---------- | -------------------------------------------- |
+| - [success](#forwards_rating_one_day_success )             | No      | integer | No         | -          | Success rating in percentage in the last day |
+| - [failure](#forwards_rating_one_day_failure )             | No      | integer | No         | -          | Failure rating in percentage in the last day |
+| - [local_failure](#forwards_rating_one_day_local_failure ) | No      | integer | No         | -          | local failure in percentage in the last day  |
+|                                                            |         |         |            |            |                                              |
 
 #### <a name="forwards_rating_one_day_success"></a>5.1.1. [Optional] Property `Metric 1 Output > forwards_rating > one_day > success`
 
@@ -194,14 +194,14 @@
 | **Minimum**  | &ge; 0 |
 |              |        |
 
-#### <a name="forwards_rating_one_day_internal_failure"></a>5.1.3. [Optional] Property `Metric 1 Output > forwards_rating > one_day > internal_failure`
+#### <a name="forwards_rating_one_day_local_failure"></a>5.1.3. [Optional] Property `Metric 1 Output > forwards_rating > one_day > local_failure`
 
 | Type                      | `integer`                                                                 |
 | ------------------------- | ------------------------------------------------------------------------- |
 | **Additional properties** | [[Any type: allowed]](# "Additional Properties of any type are allowed.") |
 |                           |                                                                           |
 
-**Description:** Internal failure in percentage in the last day
+**Description:** local failure in percentage in the last day
 
 | Restrictions |        |
 | ------------ | ------ |
@@ -215,12 +215,12 @@
 | **Additional properties** | [[Any type: allowed]](# "Additional Properties of any type are allowed.") |
 |                           |                                                                           |
 
-| Property                                                          | Pattern | Type    | Deprecated | Definition | Title/Description                                  |
-| ----------------------------------------------------------------- | ------- | ------- | ---------- | ---------- | -------------------------------------------------- |
-| - [success](#forwards_rating_ten_days_success )                   | No      | integer | No         | -          | Success rating in percentage in the last 10 days   |
-| - [failure](#forwards_rating_ten_days_failure )                   | No      | integer | No         | -          | Failure rating in percentage in the last 10 days   |
-| - [internal_failure](#forwards_rating_ten_days_internal_failure ) | No      | integer | No         | -          | Internal failure in percentage in the last 10 days |
-|                                                                   |         |         |            |            |                                                    |
+| Property                                                    | Pattern | Type    | Deprecated | Definition | Title/Description                                |
+| ----------------------------------------------------------- | ------- | ------- | ---------- | ---------- | ------------------------------------------------ |
+| - [success](#forwards_rating_ten_days_success )             | No      | integer | No         | -          | Success rating in percentage in the last 10 days |
+| - [failure](#forwards_rating_ten_days_failure )             | No      | integer | No         | -          | Failure rating in percentage in the last 10 days |
+| - [local_failure](#forwards_rating_ten_days_local_failure ) | No      | integer | No         | -          | local failure in percentage in the last 10 days  |
+|                                                             |         |         |            |            |                                                  |
 
 #### <a name="forwards_rating_ten_days_success"></a>5.2.1. [Optional] Property `Metric 1 Output > forwards_rating > ten_days > success`
 
@@ -250,14 +250,14 @@
 | **Minimum**  | &ge; 0 |
 |              |        |
 
-#### <a name="forwards_rating_ten_days_internal_failure"></a>5.2.3. [Optional] Property `Metric 1 Output > forwards_rating > ten_days > internal_failure`
+#### <a name="forwards_rating_ten_days_local_failure"></a>5.2.3. [Optional] Property `Metric 1 Output > forwards_rating > ten_days > local_failure`
 
 | Type                      | `integer`                                                                 |
 | ------------------------- | ------------------------------------------------------------------------- |
 | **Additional properties** | [[Any type: allowed]](# "Additional Properties of any type are allowed.") |
 |                           |                                                                           |
 
-**Description:** Internal failure in percentage in the last 10 days
+**Description:** local failure in percentage in the last 10 days
 
 | Restrictions |        |
 | ------------ | ------ |
@@ -271,12 +271,12 @@
 | **Additional properties** | [[Any type: allowed]](# "Additional Properties of any type are allowed.") |
 |                           |                                                                           |
 
-| Property                                                             | Pattern | Type    | Deprecated | Definition | Title/Description                                  |
-| -------------------------------------------------------------------- | ------- | ------- | ---------- | ---------- | -------------------------------------------------- |
-| - [success](#forwards_rating_thirty_days_success )                   | No      | integer | No         | -          | Success rating in percentage in the last 30 days   |
-| - [failure](#forwards_rating_thirty_days_failure )                   | No      | integer | No         | -          | Failure rating in percentage in the last 30 days   |
-| - [internal_failure](#forwards_rating_thirty_days_internal_failure ) | No      | integer | No         | -          | Internal failure in percentage in the last 30 days |
-|                                                                      |         |         |            |            |                                                    |
+| Property                                                       | Pattern | Type    | Deprecated | Definition | Title/Description                                |
+| -------------------------------------------------------------- | ------- | ------- | ---------- | ---------- | ------------------------------------------------ |
+| - [success](#forwards_rating_thirty_days_success )             | No      | integer | No         | -          | Success rating in percentage in the last 30 days |
+| - [failure](#forwards_rating_thirty_days_failure )             | No      | integer | No         | -          | Failure rating in percentage in the last 30 days |
+| - [local_failure](#forwards_rating_thirty_days_local_failure ) | No      | integer | No         | -          | Local failure in percentage in the last 30 days  |
+|                                                                |         |         |            |            |                                                  |
 
 #### <a name="forwards_rating_thirty_days_success"></a>5.3.1. [Optional] Property `Metric 1 Output > forwards_rating > thirty_days > success`
 
@@ -306,14 +306,14 @@
 | **Minimum**  | &ge; 0 |
 |              |        |
 
-#### <a name="forwards_rating_thirty_days_internal_failure"></a>5.3.3. [Optional] Property `Metric 1 Output > forwards_rating > thirty_days > internal_failure`
+#### <a name="forwards_rating_thirty_days_local_failure"></a>5.3.3. [Optional] Property `Metric 1 Output > forwards_rating > thirty_days > local_failure`
 
 | Type                      | `integer`                                                                 |
 | ------------------------- | ------------------------------------------------------------------------- |
 | **Additional properties** | [[Any type: allowed]](# "Additional Properties of any type are allowed.") |
 |                           |                                                                           |
 
-**Description:** Internal failure in percentage in the last 30 days
+**Description:** Local failure in percentage in the last 30 days
 
 | Restrictions |        |
 | ------------ | ------ |
@@ -327,12 +327,12 @@
 | **Additional properties** | [[Any type: allowed]](# "Additional Properties of any type are allowed.") |
 |                           |                                                                           |
 
-| Property                                                            | Pattern | Type    | Deprecated | Definition | Title/Description                                  |
-| ------------------------------------------------------------------- | ------- | ------- | ---------- | ---------- | -------------------------------------------------- |
-| - [success](#forwards_rating_six_months_success )                   | No      | integer | No         | -          | Success rating in percentage in the last 6 month   |
-| - [failure](#forwards_rating_six_months_failure )                   | No      | integer | No         | -          | Failure rating in percentage in the 6 month        |
-| - [internal_failure](#forwards_rating_six_months_internal_failure ) | No      | integer | No         | -          | Internal failure in percentage in the last 6 month |
-|                                                                     |         |         |            |            |                                                    |
+| Property                                                      | Pattern | Type    | Deprecated | Definition | Title/Description                                |
+| ------------------------------------------------------------- | ------- | ------- | ---------- | ---------- | ------------------------------------------------ |
+| - [success](#forwards_rating_six_months_success )             | No      | integer | No         | -          | Success rating in percentage in the last 6 month |
+| - [failure](#forwards_rating_six_months_failure )             | No      | integer | No         | -          | Failure rating in percentage in the 6 month      |
+| - [local_failure](#forwards_rating_six_months_local_failure ) | No      | integer | No         | -          | Local failure in percentage in the last 6 month  |
+|                                                               |         |         |            |            |                                                  |
 
 #### <a name="forwards_rating_six_months_success"></a>5.4.1. [Optional] Property `Metric 1 Output > forwards_rating > six_months > success`
 
@@ -362,14 +362,14 @@
 | **Minimum**  | &ge; 0 |
 |              |        |
 
-#### <a name="forwards_rating_six_months_internal_failure"></a>5.4.3. [Optional] Property `Metric 1 Output > forwards_rating > six_months > internal_failure`
+#### <a name="forwards_rating_six_months_local_failure"></a>5.4.3. [Optional] Property `Metric 1 Output > forwards_rating > six_months > local_failure`
 
 | Type                      | `integer`                                                                 |
 | ------------------------- | ------------------------------------------------------------------------- |
 | **Additional properties** | [[Any type: allowed]](# "Additional Properties of any type are allowed.") |
 |                           |                                                                           |
 
-**Description:** Internal failure in percentage in the last 6 month
+**Description:** Local failure in percentage in the last 6 month
 
 | Restrictions |        |
 | ------------ | ------ |
@@ -383,12 +383,12 @@
 | **Additional properties** | [[Any type: allowed]](# "Additional Properties of any type are allowed.") |
 |                           |                                                                           |
 
-| Property                                                      | Pattern | Type    | Deprecated | Definition | Title/Description                                  |
-| ------------------------------------------------------------- | ------- | ------- | ---------- | ---------- | -------------------------------------------------- |
-| - [success](#forwards_rating_full_success )                   | No      | integer | No         | -          | Success rating in percentage in the known period   |
-| - [failure](#forwards_rating_full_failure )                   | No      | integer | No         | -          | Failure rating in percentage in the known period   |
-| - [internal_failure](#forwards_rating_full_internal_failure ) | No      | integer | No         | -          | Internal failure in percentage in the known period |
-|                                                               |         |         |            |            |                                                    |
+| Property                                                | Pattern | Type    | Deprecated | Definition | Title/Description                                |
+| ------------------------------------------------------- | ------- | ------- | ---------- | ---------- | ------------------------------------------------ |
+| - [success](#forwards_rating_full_success )             | No      | integer | No         | -          | Success rating in percentage in the known period |
+| - [failure](#forwards_rating_full_failure )             | No      | integer | No         | -          | Failure rating in percentage in the known period |
+| - [local_failure](#forwards_rating_full_local_failure ) | No      | integer | No         | -          | Local failure in percentage in the known period  |
+|                                                         |         |         |            |            |                                                  |
 
 #### <a name="forwards_rating_full_success"></a>5.5.1. [Optional] Property `Metric 1 Output > forwards_rating > full > success`
 
@@ -418,14 +418,14 @@
 | **Minimum**  | &ge; 0 |
 |              |        |
 
-#### <a name="forwards_rating_full_internal_failure"></a>5.5.3. [Optional] Property `Metric 1 Output > forwards_rating > full > internal_failure`
+#### <a name="forwards_rating_full_local_failure"></a>5.5.3. [Optional] Property `Metric 1 Output > forwards_rating > full > local_failure`
 
 | Type                      | `integer`                                                                 |
 | ------------------------- | ------------------------------------------------------------------------- |
 | **Additional properties** | [[Any type: allowed]](# "Additional Properties of any type are allowed.") |
 |                           |                                                                           |
 
-**Description:** Internal failure in percentage in the known period
+**Description:** Local failure in percentage in the known period
 
 | Restrictions |        |
 | ------------ | ------ |
@@ -433,4 +433,4 @@
 |              |        |
 
 ----------------------------------------------------------------------------------------------------------------------------
-Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans) on 2022-01-10 at 10:35:18 +0100
+Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans) on 2022-08-28 at 23:03:44 +0100
