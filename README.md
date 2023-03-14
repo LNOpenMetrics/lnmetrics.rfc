@@ -26,7 +26,7 @@
 
 ## Introduction
 
-The Lightning Network Open Metrics Specification is a powerful tool that enables developers and users to analyze the Lightning Network and evaluate the reliability of nodes and payment channels. Given the inherent uncertainty of transactions within the network, the available metrics provided by the tool to date are essential for assessing the network's performance.
+The Lightning Network Open Metrics Specification is a powerful tool that enables developers and users to analyze the Lightning Network and evaluate the reliability of nodes and payment channels. Given the inherent uncertainty of transactions within the network, the available metrics provided by the tool to date are essential for assessing the network.
 
 ## Metrics
 
