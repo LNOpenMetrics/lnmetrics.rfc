@@ -1,1 +1,3 @@
 template_name: md
+expand_buttons: true
+copy_js: false
