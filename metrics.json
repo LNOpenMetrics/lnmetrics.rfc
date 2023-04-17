@@ -1,0 +1,8 @@
+{
+    "metrics": [
+        {
+            "name": "Local Reputation",
+            "rfc": "metrics/metric_1.md"
+        }
+    ]
+}
