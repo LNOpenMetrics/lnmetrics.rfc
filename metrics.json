@@ -2,6 +2,7 @@
     "metrics": [
         {
             "name": "Local Reputation",
+            "short_description": "TODO add short description",
             "rfc": "metrics/metric_1.md"
         }
     ]
