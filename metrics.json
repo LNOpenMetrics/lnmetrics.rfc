@@ -2,9 +2,7 @@
     "metrics": [
         {
             "name": "Local Reputation",
-            "short_description": "The local reputation described in this section aims to provide enough data to support a 
-            lightning network user during the initial phase and helps define some criteria to discover a 'good' 
-            lightning node where it is possible to initialize a channel.",
+            "short_description": "The local reputation described in this section aims to provide enough data to support a lightning network user during the initial phase and helps define some criteria to discover a 'good' lightning node where it is possible to initialize a channel.",
             "rfc": "metrics/metric_1.md"
         }
     ]
