@@ -14,6 +14,11 @@
 This document is draft of a potential specification. It has no official standing of any kind and 
 does not represent the support or consensus of any standards organization.
 
+## Definition
+
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", 
+"MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119.
+
 ## Introduction
 
 This section describes our case study that uses the LNMetrics framework to define a local 
