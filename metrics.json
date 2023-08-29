@@ -3,7 +3,7 @@
         {
             "name": "Local Reputation",
             "short_description": "The local reputation to provide enough data to support a lightning network user.",
-            "rfc": "metrics/metric_1.md"
+            "rfc": "metrics/local_reputation/metric_1.md"
         }
     ]
 }

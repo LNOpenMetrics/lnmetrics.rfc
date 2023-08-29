@@ -1,0 +1,69 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Jamming Mitigation Metric Input",
+    "required": [
+        "version",
+        "channel_in",
+        "channel_out",
+        "peer_in",
+        "peer_out",
+        "fee_msat",
+        "outgoing_liquidity",
+        "outgoing_slots",
+        "ts_added_ns",
+        "ts_removed_ns",
+        "htlc_settled"
+    ],
+    "type": "object",
+    "properties": {
+        "version": {
+            "description": "future-proof ourselves against the need to change this format.",
+            "type": "integer",
+            "minimum": 1
+        },
+        "channel_out": {
+            "description": "short channel ID of the outgoing channel that forwarded the HTLC",
+            "type": "string"
+        }, 
+        "peer_in": {
+            "description": "pubkey (HEX format) of the remote peer for the channel_in",
+            "type": "string"
+        },
+        "peer_out": {
+            "description": "pubkey (HEX format) of the remote peer for the channel_out",
+            "type": "string"
+        },
+        "fee_msat": {
+            "description": "the fee offered by the HTLC, expressed in msat",
+            "type": "integer"
+        },
+        "outgoing_liquidity": {
+            "description": "Portion of `max_htlc_value_in_flight` that is occupied on channel_out after the HTLC has been forwarded.",
+            "type": "float"
+        },
+        "outgoing_slots": {
+            "description": "the portion of `max_accepted_htlcs` that is occupied on channel_out after the HTLC has been forwarded.",
+            "type": "float"
+        },
+        "ts_added_ns": {
+            "description": "unix timestamp that the HTLC was added, expressed in nanoseconds.",
+            "type": "integer"
+        },
+        "ts_removed_ns": {
+            "description": "unix timestamp that the HLTC was removed, expressed in nanoseconds.",
+            "type": "integer"
+        },
+        "htlc_settled": {
+            "description": "set to false if the HTLC failed, and true if it was settled.",
+            "type": "bool"
+        },
+        "incoming_endorsed": {
+            "description": "Indicating the endorsement status of the incoming HTLC",
+            "type": "integer"
+        },
+        "outgoing_endorsed": {
+            "description": "Indicating the endorsement status of the outgoing HTLC",
+            "type": "integer"
+        }
+    }
+}
